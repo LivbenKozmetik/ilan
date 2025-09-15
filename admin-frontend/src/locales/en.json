@@ -1,0 +1,87 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "refresh": "Refresh",
+    "actions": "Actions",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Sign In",
+    "loginError": "Invalid email or password",
+    "logoutSuccess": "Logged out successfully"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "listings": "Listings",
+    "audit": "Audit Logs",
+    "settings": "Settings"
+  },
+  "users": {
+    "title": "User Management",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "createdAt": "Created At",
+    "changeRole": "Change Role",
+    "roleChanged": "User role updated successfully",
+    "searchPlaceholder": "Search users by email or name..."
+  },
+  "listings": {
+    "title": "Listing Management",
+    "listingTitle": "Title",
+    "description": "Description",
+    "price": "Price",
+    "category": "Category",
+    "location": "Location",
+    "owner": "Owner",
+    "createdAt": "Created At",
+    "updateListing": "Update Listing",
+    "deleteListing": "Delete Listing",
+    "bulkDelete": "Bulk Delete",
+    "listingUpdated": "Listing updated successfully",
+    "listingDeleted": "Listing deleted successfully",
+    "bulkDeleteSuccess": "{{count}} listings deleted successfully",
+    "exportListings": "Export Listings"
+  },
+  "audit": {
+    "title": "Audit Logs",
+    "action": "Action",
+    "user": "User",
+    "entityType": "Entity Type",
+    "entityId": "Entity ID",
+    "details": "Details",
+    "ipAddress": "IP Address",
+    "createdAt": "Date & Time"
+  },
+  "dashboard": {
+    "title": "Admin Dashboard",
+    "welcome": "Welcome to Admin Panel",
+    "totalUsers": "Total Users",
+    "totalListings": "Total Listings",
+    "recentActivity": "Recent Activity"
+  },
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "language": "Language",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "create": "Oluştur",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "export": "Dışa Aktar",
+    "refresh": "Yenile",
+    "actions": "İşlemler",
+    "confirm": "Onayla",
+    "yes": "Evet",
+    "no": "Hayır"
+  },
+  "auth": {
+    "login": "Giriş",
+    "logout": "Çıkış",
+    "email": "E-posta",
+    "password": "Şifre",
+    "loginButton": "Giriş Yap",
+    "loginError": "Geçersiz e-posta veya şifre",
+    "logoutSuccess": "Başarıyla çıkış yapıldı"
+  },
+  "navigation": {
+    "dashboard": "Gösterge Paneli",
+    "users": "Kullanıcılar",
+    "listings": "İlanlar",
+    "audit": "Denetim Kayıtları",
+    "settings": "Ayarlar"
+  },
+  "users": {
+    "title": "Kullanıcı Yönetimi",
+    "name": "Ad",
+    "email": "E-posta",
+    "role": "Rol",
+    "createdAt": "Oluşturulma Tarihi",
+    "changeRole": "Rol Değiştir",
+    "roleChanged": "Kullanıcı rolü başarıyla güncellendi",
+    "searchPlaceholder": "E-posta veya ada göre kullanıcı ara..."
+  },
+  "listings": {
+    "title": "İlan Yönetimi",
+    "listingTitle": "Başlık",
+    "description": "Açıklama",
+    "price": "Fiyat",
+    "category": "Kategori",
+    "location": "Konum",
+    "owner": "Sahip",
+    "createdAt": "Oluşturulma Tarihi",
+    "updateListing": "İlanı Güncelle",
+    "deleteListing": "İlanı Sil",
+    "bulkDelete": "Toplu Sil",
+    "listingUpdated": "İlan başarıyla güncellendi",
+    "listingDeleted": "İlan başarıyla silindi",
+    "bulkDeleteSuccess": "{{count}} ilan başarıyla silindi",
+    "exportListings": "İlanları Dışa Aktar"
+  },
+  "audit": {
+    "title": "Denetim Kayıtları",
+    "action": "İşlem",
+    "user": "Kullanıcı",
+    "entityType": "Varlık Türü",
+    "entityId": "Varlık ID",
+    "details": "Detaylar",
+    "ipAddress": "IP Adresi",
+    "createdAt": "Tarih & Saat"
+  },
+  "dashboard": {
+    "title": "Yönetici Paneli",
+    "welcome": "Yönetici Paneline Hoş Geldiniz",
+    "totalUsers": "Toplam Kullanıcı",
+    "totalListings": "Toplam İlan",
+    "recentActivity": "Son Aktiviteler"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "theme": "Tema",
+    "language": "Dil",
+    "lightMode": "Açık Mod",
+    "darkMode": "Koyu Mod"
+  }
+}
