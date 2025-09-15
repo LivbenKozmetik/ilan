@@ -6,6 +6,9 @@ import Layout from './components/Layout/Layout';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import UsersPage from './pages/UsersPage';
+import ListingsPage from './pages/ListingsPage';
+import AuditPage from './pages/AuditPage';
+import SettingsPage from './pages/SettingsPage';
 import { CircularProgress, Box } from '@mui/material';
 import './i18n';
 
@@ -73,7 +76,7 @@ const AppRoutes: React.FC = () => {
         element={
           <ProtectedRoute>
             <Layout>
-              <div>Listings Page (Coming Soon)</div>
+              <ListingsPage />
             </Layout>
           </ProtectedRoute>
         }
@@ -83,7 +86,7 @@ const AppRoutes: React.FC = () => {
         element={
           <ProtectedRoute>
             <Layout>
-              <div>Audit Page (Coming Soon)</div>
+              <AuditPage />
             </Layout>
           </ProtectedRoute>
         }
@@ -93,7 +96,7 @@ const AppRoutes: React.FC = () => {
         element={
           <ProtectedRoute>
             <Layout>
-              <div>Settings Page (Coming Soon)</div>
+              <SettingsPage />
             </Layout>
           </ProtectedRoute>
         }
