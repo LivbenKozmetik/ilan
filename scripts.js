@@ -236,6 +236,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     attachUIExtras();
     initIlanForm();
+    populateLanguageSelector();
 
     // If detail page with item id, fetch and render (uses existing API or fallback)
     const params = new URLSearchParams(location.search);
@@ -272,9 +273,48 @@
     }
   });
 
+  // Language selector population
+  function populateLanguageSelector() {
+    // Available languages based on locale files
+    const languages = [
+      { code: 'tr', name: 'Türkçe' },
+      { code: 'en', name: 'English' }
+    ];
+    
+    // Get current language from localStorage or default to 'tr'
+    const currentLang = localStorage.getItem('lang') || 'tr';
+    
+    // Find all language selectors on the page
+    const selectors = document.querySelectorAll('#langSelect');
+    
+    selectors.forEach(select => {
+      // Clear existing options
+      select.innerHTML = '';
+      
+      // Add language options
+      languages.forEach(lang => {
+        const option = document.createElement('option');
+        option.value = lang.code;
+        option.textContent = lang.name;
+        option.selected = lang.code === currentLang;
+        select.appendChild(option);
+      });
+      
+      // Add change event listener
+      select.addEventListener('change', function(e) {
+        const selectedLang = e.target.value;
+        localStorage.setItem('lang', selectedLang);
+        
+        // Reload to apply new language (simple approach)
+        window.location.reload();
+      });
+    });
+  }
+
   // expose some helpers globally for other scripts
   window.ilansite = window.ilansite || {};
   window.ilansite.showToast = showToast;
   window.ilansite.openContactModal = openContactModal;
   window.ilansite.toggleFavorite = toggleFavorite;
+  window.ilansite.populateLanguageSelector = populateLanguageSelector;
 })();
