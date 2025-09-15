@@ -1,7 +1,10 @@
 {
   "site_title": "Listings",
-  "search_placeholder": "Search...",
+  "search_placeholder": "Search: forklift, excavator...",
   "price_contact": "Contact for price",
   "no_image": "No image available",
-  "posted_on": "Posted on"
+  "posted_on": "Posted on",
+  "nav.create": "Create Listing",
+  "listings.title": "Current Listings",
+  "search.placeholder": "Search: forklift, excavator..."
 }

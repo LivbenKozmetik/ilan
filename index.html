@@ -21,7 +21,7 @@
 
       <div class="flex items-center gap-4 flex-1 max-w-3xl">
         <div class="relative w-full">
-          <input id="searchInputHeader" type="search" placeholder="Ara: forklift, ekskavatör..." class="w-full p-3 pl-10 border rounded-lg focus:ring-2 focus:ring-green-200" aria-label="site içi arama" />
+          <input id="searchInputHeader" type="search" placeholder="Ara: forklift, ekskavatör..." class="w-full p-3 pl-10 border rounded-lg focus:ring-2 focus:ring-green-200" aria-label="site içi arama" data-i18n="search.placeholder" />
           <svg class="w-5 h-5 absolute left-3 top-3 text-gray-400" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
       </div>
@@ -116,6 +116,7 @@
   <!-- Toast -->
   <div id="toastWrap" class="fixed right-4 bottom-6 z-50 space-y-2"></div>
 
+  <script src="app.js" defer></script>
   <script src="scripts.js" defer></script>
   <script>document.getElementById('yearFooter').textContent = new Date().getFullYear(); document.getElementById('listUpdated').textContent = new Date().toLocaleString();</script>
 </body>
