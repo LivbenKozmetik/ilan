@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "title": "Satılık Forklift - 2018 Model",
+    "description": "Geniş açıklama: tüm bakımları yapılmış, az kullanılmış forklift. Motor, hidrolik ve lastikler iyi durumda.",
+    "price": 95000,
+    "currency": "TRY",
+    "images": [
+      "https://via.placeholder.com/1200x800?text=Forklift+1",
+      "https://via.placeholder.com/1200x800?text=Forklift+2"
+    ],
+    "thumbnail": "https://via.placeholder.com/400x300?text=Forklift+thumb",
+    "category": "İnşaat / Forklift",
+    "condition": "İkinci El",
+    "location": "İstanbul, Beylikdüzü",
+    "lat": 40.935,
+    "lng": 28.655,
+    "seller": {
+      "id": 12,
+      "name": "Örnek Firma A.Ş.",
+      "phone": "+90 532 000 0000",
+      "email": "info@ornekfirma.com",
+      "rating": 4.6,
+      "avatar": "https://via.placeholder.com/80x80?text=Seller"
+    },
+    "contact_methods": {
+      "phone": true,
+      "email": true,
+      "chat": false
+    },
+    "created_at": "2025-09-10T09:30:00Z",
+    "updated_at": "2025-09-12T14:00:00Z",
+    "views": 124,
+    "favorites_count": 5,
+    "tags": ["forklift","2.5 ton","bakımlı"],
+    "attributes": {
+      "model": "XYZ-2500",
+      "year": 2018,
+      "capacity": "2.5 ton",
+      "hours": 3200
+    },
+    "shipping_info": "Alıcı alım yapar; teslim bölgesine göre fiyatlandırma",
+    "warranty": "6 ay mekanik garanti",
+    "attachments": [
+      "https://example.com/docs/inspection-report.pdf"
+    ],
+    "comments_count": 3,
+    "status": "active",
+    "related_listings": [2, 5],
+    "seo": {
+      "meta_title": "Satılık Forklift 2018 - Örnek Firma",
+      "meta_description": "2.5 ton kapasite, bakım yapılmış forklift. Hemen inceleyin."
+    }
+  }
+]
