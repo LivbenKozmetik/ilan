@@ -64,6 +64,26 @@
     </div>
   </main>
 
+  <script src="src/head-manager.js" type="module"></script>
   <script src="scripts.js" defer></script>
+  <script>
+    // Initialize head manager for categories page
+    if (window.headManager) {
+      // Get current category from URL or page content
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryParam = urlParams.get('category');
+      const categoryTitle = document.querySelector('#categoryTitle')?.textContent;
+      
+      if (categoryParam || (categoryTitle && categoryTitle !== 'Tüm İlanlar')) {
+        const categoryName = categoryParam || categoryTitle;
+        window.headManager.updateForCategory(categoryName);
+      } else {
+        window.headManager.updateForCategory(null, {
+          title: 'Kategoriler',
+          description: 'Kategoriye göre ilanları keşfedin. Filtreleme, arama ve sonsuz kaydırma destekli.'
+        });
+      }
+    }
+  </script>
 </body>
 </html>

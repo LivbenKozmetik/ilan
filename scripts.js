@@ -135,6 +135,12 @@
   function renderDetail(item) {
     const container = $('#detailContainer');
     if (!container) return;
+    
+    // Update head manager for listing detail
+    if (typeof window !== 'undefined' && window.headManager) {
+      window.headManager.updateForListing(item);
+    }
+    
     // seller mock (in real app fetch owner)
     const seller = item.owner || { name: 'İlan Sahibi', rating: 4.6, since: '2021' };
     const images = item.images && item.images.length ? item.images : ['https://via.placeholder.com/800x450?text=No+Image'];

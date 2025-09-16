@@ -18,6 +18,14 @@ function createProductCard(p){
 function escapeHtml(s=''){ return String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
 
 export async function categoriesPage(container){
+  // Update head manager for categories page
+  if (typeof window !== 'undefined' && window.headManager) {
+    window.headManager.updateForCategory(null, {
+      title: 'Kategoriler',
+      description: 'Kategoriye göre ilanları keşfedin. Filtreleme, arama ve sonsuz kaydırma destekli.'
+    });
+  }
+  
   container.innerHTML = '';
   // left filters
   const left = document.createElement('aside');
@@ -68,6 +76,17 @@ export async function categoriesPage(container){
     const minP = filter.min != null ? Number(filter.min) : null;
     const maxP = filter.max != null ? Number(filter.max) : null;
     const cat = filter.cat || '';
+    
+    // Update head manager when category changes
+    if (cat && typeof window !== 'undefined' && window.headManager) {
+      window.headManager.updateForCategory(cat);
+    } else if (!cat && typeof window !== 'undefined' && window.headManager) {
+      window.headManager.updateForCategory(null, {
+        title: 'Kategoriler',
+        description: 'Kategoriye göre ilanları keşfedin. Filtreleme, arama ve sonsuz kaydırma destekli.'
+      });
+    }
+    
     const filtered = PRODUCTS.filter(p=>{
       if(cat && p.category !== cat) return false;
       if(q && !(p.title + ' ' + p.store).toLowerCase().includes(q)) return false;

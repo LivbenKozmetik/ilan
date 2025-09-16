@@ -116,7 +116,21 @@
   <!-- Toast -->
   <div id="toastWrap" class="fixed right-4 bottom-6 z-50 space-y-2"></div>
 
+  <script src="src/head-manager.js" type="module"></script>
   <script src="scripts.js" defer></script>
-  <script>document.getElementById('yearFooter').textContent = new Date().getFullYear(); document.getElementById('listUpdated').textContent = new Date().toLocaleString();</script>
+  <script>
+    document.getElementById('yearFooter').textContent = new Date().getFullYear(); 
+    document.getElementById('listUpdated').textContent = new Date().toLocaleString();
+    
+    // Initialize head manager for home page
+    if (window.headManager) {
+      window.headManager.updatePage({
+        title: 'İş Makineleri & Ekipman İlanları',
+        description: 'Satılık ve kiralık iş makineleri, ekipmanlar ve yedek parçalar. Hızlı arama, güvenli ilan yönetimi.',
+        ogType: 'website',
+        twitterCard: 'summary_large_image'
+      });
+    }
+  </script>
 </body>
 </html>

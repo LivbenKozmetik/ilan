@@ -1,5 +1,13 @@
 import { i18n } from '../i18n.js';
 export async function storefrontPage(container){
+  // Update head manager for storefront
+  if (typeof window !== 'undefined' && window.headManager) {
+    window.headManager.updateForStorefront({
+      title: 'Vitrin',
+      description: 'Mağazalar ve öne çıkan ürünler. Güvenilir satıcıların kaliteli ürünlerini keşfedin.'
+    });
+  }
+  
   container.innerHTML = '';
   const left = document.createElement('aside');
   left.className = 'card';

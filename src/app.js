@@ -6,6 +6,12 @@ import { homePage } from './pages/home.js';
 import { categoriesPage } from './pages/categories.js';
 import { storefrontPage } from './pages/storefront.js';
 import { i18n } from './i18n.js';
+import headManager from './head-manager.js';
+
+// Make head manager globally available
+if (typeof window !== 'undefined') {
+  window.headManager = headManager;
+}
 
 // register pages
 router.register('/', homePage);

@@ -1,5 +1,15 @@
 import { i18n } from '../i18n.js';
 export async function homePage(container){
+  // Update head manager for home page
+  if (typeof window !== 'undefined' && window.headManager) {
+    window.headManager.updatePage({
+      title: 'İş Makineleri & Ekipman İlanları',
+      description: 'Satılık ve kiralık iş makineleri, ekipmanlar ve yedek parçalar. Hızlı arama, güvenli ilan yönetimi.',
+      ogType: 'website',
+      twitterCard: 'summary_large_image'
+    });
+  }
+  
   container.innerHTML = '';
   const left = document.createElement('aside');
   left.className = 'card filters';
