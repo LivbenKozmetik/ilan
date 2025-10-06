@@ -1,0 +1,31 @@
+{
+  "name": "ilan-site",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "migrate": "psql \"$DATABASE_URL\" -f migrations/init.sql",
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.383.0",
+    "@aws-sdk/s3-request-presigner": "^3.383.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.8.0",
+    "helmet": "^7.0.0",
+    "joi": "^17.9.2",
+    "multer": "^1.4.4",
+    "pg": "^8.11.2",
+    "jsonwebtoken": "^9.0.0",
+    "cookie-parser": "^1.4.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "nodemon": "^2.0.22"
+  }
+}

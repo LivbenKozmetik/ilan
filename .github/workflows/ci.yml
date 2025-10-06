@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  backend-test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: testdb
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install backend deps
+        run: npm ci
+      - name: Wait for Postgres
+        run: until pg_isready -h localhost -p 5432 -U postgres; do sleep 1; done
+        env:
+          PGPASSWORD: postgres
+      - name: Run migrations
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/testdb
+        run: psql "$DATABASE_URL" -f migrations/init.sql
+      - name: Run backend tests
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/testdb
+          JWT_SECRET: test-secret
+          REFRESH_SECRET: test-refresh-secret
+        run: npm test
+
+  frontend-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install frontend deps
+        working-directory: ./admin-frontend
+        run: npm ci
+      - name: Lint frontend
+        working-directory: ./admin-frontend
+        run: npm run lint
+      - name: Build frontend
+        working-directory: ./admin-frontend
+        run: npm run build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-build
+          path: admin-frontend/dist/
