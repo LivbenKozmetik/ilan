@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>İlan Detay — İlanSite</title>
+  <meta name="description" content="İlan detayları" />
+  <link rel="manifest" href="/manifest.json" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-sans antialiased bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3"><svg class="w-8 h-8 text-green-600" viewBox="0 0 24 24" fill="none"><path d="M3 12l4-4 4 4 8-8 2 2-10 10L7 12l-4 4-2-2z" fill="currentColor"/></svg><span class="text-lg font-semibold">İlanSite</span></a>
+      <select id="langSelect" class="p-2 border rounded-md bg-white text-sm" aria-label="Dil seçimi"></select>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    <div id="detailContainer" class="bg-white rounded-lg shadow p-6">
+      <!-- JS dolduracak: gallery + başlık + açıklama + seller + reviews + related -->
+    </div>
+  </main>
+
+  <!-- Contact Modal (reused) -->
+  <div id="modalBackdrop" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50" aria-hidden="true">
+    <div id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6">
+      <h3 id="contactModalTitle" class="text-lg font-semibold mb-2">İlan Sahibiyle İletişime Geç</h3>
+      <p id="contactModalDesc" class="text-sm text-gray-600 mb-4">Mesaj gönderin; iletişim bilgileri doğrudan paylaşılmaz.</p>
+      <form id="contactForm" class="space-y-3">
+        <input id="contactName" type="text" placeholder="Adınız" class="w-full p-2 border rounded" required />
+        <input id="contactEmail" type="email" placeholder="E-posta" class="w-full p-2 border rounded" required />
+        <textarea id="contactMessage" rows="4" placeholder="Mesajınız..." class="w-full p-2 border rounded" required></textarea>
+        <div class="flex justify-end gap-2">
+          <button type="button" id="modalCancel" class="px-4 py-2 bg-gray-100 rounded">İptal</button>
+          <button type="submit" id="modalSend" class="px-4 py-2 bg-indigo-600 text-white rounded">Gönder</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toastWrap" class="fixed right-4 bottom-6 z-50 space-y-2"></div>
+
+  <script src="app.js" defer></script>
+  <script src="scripts.js" defer></script>
+</body>
+</html>
